@@ -15,13 +15,14 @@ const transaction = new Schema({
     title:{
         type:String,
         required:true
+    },
+    addedTime:{
+        type:Date,
+        default:Date.now
     }
 },{
     collection:'transactions',
     versionKey:false,
-    timestamps:{
-        addedDate:'addedDate'
-    }
 })
 
 module.exports = mongoose.model("Transactions", transaction);

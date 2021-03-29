@@ -1,9 +1,12 @@
 const router = require('express').Router();
-const addTransaction = require('./addTransection/add')
+const transact = require('./transactions/transact')
 
 router.get('/',(req,res)=>{
     res.send("api called succfully");
 })
-router.post('/add',addTransaction.newTransaction)
+
+router.get('/transactions',transact.fetchTransactions)
+router.post('/add',transact.newTransaction)
+
 
 module.exports = router
